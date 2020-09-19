@@ -1,0 +1,27 @@
+###
+GET   http://localhost:3000/api/employess
+
+###
+POST  http://localhost:3000/api/employess
+Content-Type: application/json
+
+{
+    "name": "Keren",
+    "position": "CTO",
+    "office": "Bogota",
+    "salary": 40000
+}
+
+###
+GET   http://localhost:3000/api/employess/5f6591a28f0248a59d30beac
+
+###
+PUT  http://localhost:3000/api/employess/5f659925b3f0a5c6fb0ce66e
+Content-Type: application/json
+
+{
+    "office": "Sincelejo"
+}
+
+###
+DELETE  http://localhost:3000/api/employess/5f6591a28f0248a59d30beac

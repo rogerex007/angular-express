@@ -1,3 +1,4 @@
+require('./data/database')
 const app = require('./app');
 
 
