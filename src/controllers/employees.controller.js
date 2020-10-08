@@ -17,19 +17,32 @@ employeesCtr.createEmployee = async (req, res) => {
 employeesCtr.getEmployee = async (req, res) => {
     const { id } = req.params;
     const employee = await Employee.findById(id);
-    res.json(employee);
+    if (employee != null) {
+        res.json(employee);
+    }else{
+        res.json({message: 'Employee id dont exists'});
+    }
+    
 };
 
 employeesCtr.updateEmployee = async (req, res) => {
     const { id } = req.params;
     const data = req.body;
-    await Employee.updateOne({_id: id}, data);
-    res.json({message: 'Employee Update', data});
+    const employee = await Employee.findById(id);
+    if (employee != null) {
+        const updateEmployee = await Employee.findByIdAndUpdate(id, data, {
+            new: true
+        });
+        res.json({message: 'Employee Update', updateEmployee});
+    }else{
+        res.json({message: 'Employee id dont exists'});
+    }
+
 };
 
 employeesCtr.deleteEmployee = async (req, res) => {
     const { id } = req.params;
-    await Employee.deleteOne({_id: id});
+    await Employee.findByIdAndDelete(id);
     res.json({message: 'Employee Delete'});
 };
 

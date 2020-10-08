@@ -13,7 +13,7 @@ Content-Type: application/json
 }
 
 ###
-GET   http://localhost:3000/api/employess/5f6591a28f0248a59d30beac
+GET   http://localhost:3000/api/employess/5f7e2fb2225b500828c2be86
 
 ###
 PUT  http://localhost:3000/api/employess/5f659925b3f0a5c6fb0ce66e
@@ -25,3 +25,15 @@ Content-Type: application/json
 
 ###
 DELETE  http://localhost:3000/api/employess/5f6591a28f0248a59d30beac
+
+//Auth API
+
+###
+POST http://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+{
+    "username": "rogerex007",
+    "email": "roger@test.com",
+    "password": "271200"
+}
