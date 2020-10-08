@@ -17,7 +17,7 @@ UserSchema.statics.encryptPassword = async (password) => {
    return bcrypt.hash(password, salt);
 };
 UserSchema.statics.comparePassword = async (password, receivedPassword) => {
-    await bcrypt.compare(password, receivedPassword);
+    return bcrypt.compare(password, receivedPassword);
 };
 
 module.exports = model('user', UserSchema);

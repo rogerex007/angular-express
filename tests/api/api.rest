@@ -37,3 +37,12 @@ Content-Type: application/json
     "email": "roger@test.com",
     "password": "271200"
 }
+
+###
+POST http://localhost:3000/api/auth/signin
+Content-Type: application/json
+
+{
+    "email": "roger@test.com",
+    "password": "271200"
+}
