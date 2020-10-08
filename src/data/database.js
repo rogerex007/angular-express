@@ -1,9 +1,10 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
+
 let User = process.env.DB_USER;
 let Pass = process.env.DB_PASS;
 let Uri = `mongodb+srv://${User}:${Pass}@cluster0.mgm3e.mongodb.net/angular-express?retryWrites=true&w=majority`;
-console.log(User);
+
 mongoose.connect(Uri, {
     useUnifiedTopology: true,
     useFindAndModify: true,
