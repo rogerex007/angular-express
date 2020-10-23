@@ -5,6 +5,7 @@ const {createRoles} = require('./libs/initialSetup');
 
 const employessRoutes =  require('./routes/employess.routes');
 const authRoutes = require('./routes/auth.routes');
+const userRoutes = require('./routes/user.routes');
 
 const app = express()
 createRoles();
@@ -20,5 +21,6 @@ app.use(express.urlencoded({extended: false}));
 //Routes
 app.use('/api/employess', employessRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
 
 module.exports = app;

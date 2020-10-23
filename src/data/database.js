@@ -7,7 +7,7 @@ let Uri = `mongodb+srv://${User}:${Pass}@cluster0.mgm3e.mongodb.net/angular-expr
 
 mongoose.connect(Uri, {
     useUnifiedTopology: true,
-    useFindAndModify: true,
+    useFindAndModify: false,
     useNewUrlParser: true,
     autoIndex: false
 })

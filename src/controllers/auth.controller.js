@@ -38,6 +38,7 @@ authCtr.singnin = async (req, res) => {
 
     const userFound = await await User.findOne({email: email}).populate('roles');
 
+
     if(!userFound) return res.json({message: 'User not found'});
 
     const matchPassword = await User.comparePassword(password, userFound.password);

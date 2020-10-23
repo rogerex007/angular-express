@@ -33,9 +33,10 @@ POST http://localhost:3000/api/auth/signup
 Content-Type: application/json
 
 {
-    "username": "rogerex007",
-    "email": "roger@test.com",
-    "password": "271200"
+    "username": "rogerex07",
+    "email": "roger.mesa@test.com",
+    "password": "271200",
+    "roles": ["admin"]
 }
 
 ###

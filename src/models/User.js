@@ -1,15 +1,14 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model} = require('mongoose');
 const ObjectId = require('mongoose').Schema.Types.ObjectId;
 const bcrypt = require('bcryptjs');
+const mongoValidator = require('../validators/mongo.validator');
+
 
 const UserSchema = new Schema({
     username: {type: String, unique: true},
     email: {type: String, unique:true},
     password: {type: String, required: true},
-    roles: [{
-        ref: "role",
-        type: ObjectId
-    }]
+    roles: [{ ref: "role", type: ObjectId}]
 }, {versionKey: false, timestamps: true});
 
 UserSchema.statics.encryptPassword = async (password) => {
